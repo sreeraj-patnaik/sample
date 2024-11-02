@@ -3,84 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Website</title>
+    <title>1st CSSE Classroom</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Base Styling */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
+
+        /* Colors */
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #f3f4f6;
+            --accent-color: #e1e8ed;
+            --text-color: #333;
+            --light-text: #555;
+            --background-color: #fefefe;
+            --card-background: #ffffff;
+            --footer-background: #D3D3D3; /* Updated footer background */
+        }
+
+        /* Layout Styling */
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
         header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
             text-align: center;
         }
-        nav {
-            margin: 20px 0;
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            background-color: var(--accent-color);
+            padding: 1rem;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: bold;
             text-decoration: none;
-        }
-        main {
-            padding: 20px;
-            background: #fff;
-            max-width: 800px;
-            margin: auto;
+            padding: 0.5rem 1rem;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
         }
-        footer {
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Content Section Styling */
+        .content {
+            padding: 2rem;
             text-align: center;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-            position: fixed;
-            width: 100%;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+
+        /* Faculty Card Styling */
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .faculty-card {
+            background-color: var(--card-background);
+            border: none;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            margin: 1rem;
+            text-align: center;
+            width: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .faculty-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        .faculty-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+        }
+
+        .faculty-card p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--footer-background);
+            color: #fefefe;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
             bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .content, .faculty-card {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <h1>1st CSSE Classroom</h1>
+        <p>Welcome to the official website of 1st CSSE</p>
+    </header>
 
-<header>
-    <h1>Welcome to My Sample Website</h1>
+    <!-- Navigation Section -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <ul>
+            <li><a href="#" onclick="showContent('home')">Home</a></li>
+            <li><a href="#" onclick="showContent('faculty')">Faculty</a></li>
+            <li><a href="#" onclick="showContent('links')">Important Links</a></li>
+            <li><a href="#" onclick="showContent('announcements')">Announcements</a></li>
+            <li><a href="#" onclick="showContent('gallery')">Gallery</a></li>
+        </ul>
     </nav>
-</header>
 
-<main>
-    <section id="home">
-        <h2>Home</h2>
-        <p>This is a sample website to demonstrate a basic HTML structure.</p>
-    </section>
-    
-    <section id="about">
-        <h2>About</h2>
-        <p>This website is created as a template for building more complex sites.</p>
+    <!-- Content Sections -->
+    <section id="home" class="content">
+        <h2>Welcome to 1st CSSE Classroom</h2>
+        <p>This website is a hub for all resources, announcements, and events for the 1st CSSE Classroom. Navigate through the tabs to learn more!</p>
+        <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami | Class Representatives: D. S. R. Patnaik, D. Bharat, N. Srinija, P. K. Vedas</p>
+        </footer>
     </section>
 
-    <section id="services">
-        <h2>Services</h2>
-        <p>We offer a variety of services to help you achieve your goals.</p>
+    <section id="faculty" class="content" style="display:none;">
+        <h2>Faculty Members</h2>
+        <div class="faculty-container">
+            <!-- Faculty Cards -->
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\prince.jpeg" alt="Prof Dr. VV Rama Reddy">
+                <h3>Prof Dr. VV Rama Reddy</h3>
+                <p>Honorary principal, Lendi Institute Of Engineering And Technology</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\harisir.jpeg" alt="Prof Dr. Haribabu Thammineni">
+                <h3>Prof Dr. Haribabu Thammineni</h3>
+                <p>Vice Principal (admin), Professor of English</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\vpacad.jpeg" alt="Prof. KV Narasimham">
+                <h3>Prof. KV Narasimham</h3>
+                <p>Vice Principal (acad), Professor of Mathematics</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\csshod.jpg" alt="Prof. Dr. R Rajender">
+                <h3>Prof. Dr. R Rajender</h3>
+                <p>HOD-CSSE, Professor of I.P for 1st CSSE</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\hodsnh.jpeg" alt="Prof Dr. PD Sailaja">
+                <h3>Prof Dr. PD Sailaja</h3>
+                <p>HOD- Science and Humanities, Professor of Mathematics</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\lac.jpg" alt="Prof Dr. E Gouthami">
+                <h3>Prof Dr. E Gouthami</h3>
+                <p>Class teacher 1st CSSE, Mathematics(LAC)</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\bcm.jpg" alt="Prof. Ch Polayya">
+                <h3>Prof. Ch Polayya</h3>
+                <p>Basics of Civil and Mechanical Engineering</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\eph.jpg" alt="Prof. A Arjun Kumar">
+                <h3>Prof. A Arjun Kumar</h3>
+                <p>Engineering Physics</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\cen.jpg" alt="Prof. K Pushpalatha">
+                <h3>Prof. K Pushpalatha</h3>
+                <p>Communicative English (Theory, Lab)</p>
+            </div>
+	    <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\itw.jpg" alt="Prof. K Pushpalatha">
+                <h3>Prof. S Swaroop </h3>
+                <p>IT workshop</p>
+            </div>
+            <div class="faculty-card">
+                <img src="C:\Users\Administrator\Pictures\pix of faculty\ews.jpg" alt="Prof. K Pushpalatha">
+                <h3>Prof. M Balaji </h3>
+                <p>Engineering workshop</p>
+            </div>
+        </div>
+        <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami | Class Coordinators: D. S. R. Patnaik, D. Bharat, N. Srinija, P. K. Vedas</p>
+        </footer>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>You can reach us at contact@example.com.</p>
+    <section id="links" class="content" style="display:none;">
+        <h2>Important Links</h2>
+        <p>Here you can add links to important resources and websites relevant to the class.</p>
+        <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami | Class Coordinators: D. S. R. Patnaik, D. Bharat, N. Srinija, P. K. Vedas</p>
+        </footer>
     </section>
-</main>
 
-<footer>
-    <p>&copy; 2024 Sample Website. All Rights Reserved.</p>
-</footer>
+    <section id="announcements" class="content" style="display:none;">
+        <h2>Announcements</h2>
+        <p>Stay tuned for the latest announcements and updates related to the 1st CSSE classroom.</p>
+        <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami | Class Coordinators: D. S. R. Patnaik, D. Bharat, N. Srinija, P. K. Vedas</p>
+        </footer>
+    </section>
 
+    <section id="gallery" class="content" style="display:none;">
+        <h2>Gallery</h2>
+        <p>Gallery of events, classes, and activities related to 1st CSSE.</p>
+        <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami | Class Coordinators: D. S. R. Patnaik, D. Bharat, N. Srinija, P. K. Vedas</p>
+        </footer>
+    </section>
+
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
