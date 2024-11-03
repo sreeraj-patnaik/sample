@@ -172,6 +172,47 @@
                 padding: 1rem;
             }
         }
+	     /* Styling for the marquee */
+    .marquee-container {
+        background-color: #f8f9fa;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    .marquee {
+        display: inline-block;
+        animation: scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    /* Shining "New" icon */
+    .shining-icon {
+        display: inline-block;
+        font-weight: bold;
+        color: #ff6f61;
+        margin-right: 10px;
+        position: relative;
+        animation: shine 2s linear infinite;
+    }
+    @keyframes shine {
+        0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+        50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    }
+    /* Clickable text */
+    .clickable-text {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    .clickable-text:hover {
+        color: #0056b3;
+    }
+
     </style>
 </head>
 <body>
@@ -181,6 +222,12 @@
 	    <hr>
         <p>Welcome to the student made website of 1st CSSE</p>
     </header>
+	<div class="marquee-container">
+    <div class="marquee">
+        <span class="shining-icon">New</span>
+        <a href="https://www.example.com" class="clickable-text">please submit your physics records bt monday</a>
+    </div>
+</div>
 
     <!-- Navigation Section -->
 	<hr><hr>
