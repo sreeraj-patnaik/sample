@@ -18,12 +18,16 @@ nav {
     padding: 0;
     margin: 0;
     gap: 1rem; /* Space between buttons */
-    background: none; /* Removes any default background */
-    flex-wrap: wrap; /* Allows wrapping to next line when necessary */
+    background: none;
+    flex-wrap: wrap; /* Allows wrapping to the next row when necessary */
+    justify-content: center; /* Ensures buttons stay centered */
+    max-width: 100%; /* Ensures it does not overflow */
+    box-sizing: border-box;
 }
 
 .nav-buttons li {
-    flex: 1 0 auto; /* Prevents items from shrinking and makes them flexible */
+    flex: 1 0 auto; /* Items are flexible and won't shrink */
+    min-width: 120px; /* Ensures buttons have a minimum width */
 }
 
 /* Button-like styling for each link */
@@ -38,6 +42,7 @@ nav {
     display: inline-block;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 120px; /* Ensures consistent button size */
 }
 
 /* Hover effect for buttons */
@@ -54,7 +59,7 @@ nav {
     }
 
     .nav-buttons li {
-        flex: 1 0 45%; /* Allow items to take up about half the screen on small screens */
+        flex: 1 0 45%; /* Buttons will take about half the width on smaller screens */
     }
 }
 
