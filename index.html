@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1st CSSE Classroom</title>
     <style>
+	    /* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.nav-buttons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1rem; /* Space between each button */
+}
+
+.nav-buttons li {
+    margin: 0;
+}
+
+.nav-buttons a {
+    padding: 0.75rem 1.5rem;
+    background-color: #2c3e50; /* Button color */
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-buttons a:hover {
+    background-color: #34495e; /* Hover color */
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
       /* Base Styling */
         * {
             margin: 0;
@@ -367,18 +404,19 @@ footer p {
     </div>
 </div>
 
-    <!-- Navigation Section -->
-	<hr><hr>
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showContent('home')">Home</a></li>
-            <li><a href="#" onclick="showContent('faculty')">Faculty</a></li>
-            <li><a href="#" onclick="showContent('links')">Important Links</a></li>
-            <li><a href="#" onclick="showContent('announcements')">Announcements</a></li>
-            <li><a href="#" onclick="showContent('gallery')">Gallery</a></li>
-        </ul>
-    </nav>
+   <!-- Navigation Section -->
 <hr><hr>
+<nav>
+    <ul class="nav-buttons">
+        <li><a href="#" onclick="showContent('home')">Home</a></li>
+        <li><a href="#" onclick="showContent('faculty')">Faculty</a></li>
+        <li><a href="#" onclick="showContent('links')">Important Links</a></li>
+        <li><a href="#" onclick="showContent('announcements')">Announcements</a></li>
+        <li><a href="#" onclick="showContent('gallery')">Gallery</a></li>
+    </ul>
+</nav>
+<hr><hr>
+
     <!-- Content Sections -->
     <section id="home" class="content">
         <h2>Welcome to 1st CSSE Classroom</h2>
