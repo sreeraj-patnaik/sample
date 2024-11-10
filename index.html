@@ -36,15 +36,31 @@
             line-height: 1.6;
         }
 
-    /* Header Styling */
+   /* Header Styling */
 header {
+    position: relative;
     background-image: url('CLG.jpeg'); /* Absolute path to your image */
     background-size: cover; /* Cover the entire header */
     background-position: center; /* Center the background image */
     color: #00008B;
     padding: 1.5rem;
     text-align: center;
-    filter: brightness(50%); /* Reduce brightness of the background */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Ensure overlay is below the text */
+}
+
+header > * {
+    position: relative;
+    z-index: 1; /* Ensure content stays on top */
 }
 
 
