@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1st CSSE Classroom</title>
     <style>
-	  /* Navigation Styling */
+	/* Navigation Styling */
 nav {
     display: flex;
     justify-content: center;
@@ -18,22 +18,24 @@ nav {
     padding: 0;
     margin: 0;
     gap: 1rem; /* Space between buttons */
-    background: none;
-    flex-wrap: wrap; /* Allows wrapping to the next row when necessary */
+    flex-wrap: wrap; /* Allows wrapping to next line when necessary */
     justify-content: center; /* Ensures buttons stay centered */
-    max-width: 100%; /* Ensures it does not overflow */
-    box-sizing: border-box;
+    width: 100%; /* Ensures buttons don't overflow */
+    max-width: 900px; /* Max width to prevent stretching on larger screens */
 }
 
+/* Each button (li) */
 .nav-buttons li {
-    flex: 1 0 auto; /* Items are flexible and won't shrink */
-    min-width: 120px; /* Ensures buttons have a minimum width */
+    flex: 1 0 200px; /* Flexible buttons that take up a minimum of 200px */
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* Button-like styling for each link */
 .nav-buttons a {
     padding: 0.75rem 1.5rem;
-    background-color: #2c3e50; /* Button color */
+    background-color: #2980b9; /* Button color */
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
@@ -41,25 +43,30 @@ nav {
     transition: all 0.3s ease;
     display: inline-block;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 120px; /* Ensures consistent button size */
+    width: 100%; /* Makes buttons take full width of parent li */
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 /* Hover effect for buttons */
 .nav-buttons a:hover {
-    background-color: #34495e; /* Hover color */
+    background-color: #3498db; /* Hover color */
     transform: translateY(-2px); /* Lift effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Mobile Styling */
 @media (max-width: 600px) {
     .nav-buttons {
-        justify-content: center;
+        gap: 0.5rem; /* Reduce space between buttons */
     }
 
     .nav-buttons li {
-        flex: 1 0 45%; /* Buttons will take about half the width on smaller screens */
+        flex: 1 0 45%; /* Buttons will take up about half the width on smaller screens */
+    }
+
+    .nav-buttons a {
+        font-size: 0.9rem; /* Adjust button font size for mobile */
     }
 }
 
