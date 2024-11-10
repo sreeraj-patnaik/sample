@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1st CSSE Classroom</title>
     <style>
-        /* Base Styling */
+      /* Base Styling */
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box; change the styling professional 
             font-family: 'Arial', sans-serif;
         }
 
-        /* Colors */
-        :root {
-            --primary-color: #3a7ca5;
-            --secondary-color: #f3f4f6;
-            --accent-color: #e1e8ed;
-            --text-color: #333;
-            --light-text: #555;
-            --background-color: #fefefe;
-            --card-background: #ffffff;
-            --footer-background: #D3D3D3; /* Updated footer background */
+      /* Colors */
+:root {
+    --primary-color: #2c3e50; /* Deep navy blue for primary elements */
+    --secondary-color: #ecf0f1; /* Light neutral background */
+    --accent-color: #bdc3c7; /* Soft grey accent color */
+    --text-color: ##2c3e50; /* Dark charcoal for readability */
+    --light-text: #666666; /* Muted grey for subtext */
+    --background-color: #f7f9f9; /* Light ivory background for warmth */
+    --card-background: #ffffff; /* Pure white for card background */
+    --footer-background: #bdc3c7; /* Rich navy blue for footer */
+    --hover-color: #2980b9; /* Stylish blue for hover interactions */
+    --border-color: #dcdde1; /* Subtle border color */
+}
+
         }
 
         /* Layout Styling */
@@ -32,15 +36,33 @@
             line-height: 1.6;
         }
 
-        /* Header Styling */
-        header {
+   /* Header Styling */
+header {
+    position: relative;
     background-image: url('CLG.jpeg'); /* Absolute path to your image */
     background-size: cover; /* Cover the entire header */
     background-position: center; /* Center the background image */
-    color: #00008B;
+    color: #ffffff;
     padding: 1.5rem;
     text-align: center;
 }
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Ensure overlay is below the text */
+}
+
+header > * {
+    position: relative;
+    z-index: 1; /* Ensure content stays on top */
+}
+
 
 
         header h1 {
@@ -144,8 +166,8 @@
 
         /* Footer Styling */
         footer {
-            background-color: var(--footer-background);
-            color: #fefefe;
+            background-color: #fefefe;
+            color: var(--footer-background);
             text-align: center;
             padding: 1rem;
             position: relative;
@@ -156,6 +178,140 @@
         footer p {
             font-size: 0.9rem;
         }
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Content Section Styling */
+.content {
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+}
+
+.content p {
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+/* Faculty Card Styling */
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.faculty-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-color);
+}
+
+.faculty-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.faculty-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.faculty-card p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--footer-background);
+    color: #fefefe;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .faculty-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -172,16 +328,66 @@
                 padding: 1rem;
             }
         }
+	     /* Styling for the marquee */
+    .marquee-container {
+        background-color: #f8f9fa;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    .marquee {
+        display: inline-block;
+        animation: scroll 10s linear infinite;
+    }
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    /* Shining "New" icon */
+    .shining-icon {
+        display: inline-block;
+        font-weight: bold;
+        color: #ff6f61;
+        margin-right: 10px;
+        position: relative;
+        animation: shine 2s linear infinite;
+    }
+    @keyframes shine {
+        0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+        50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    }
+    /* Clickable text */
+    .clickable-text {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    .clickable-text:hover {
+        color: #0056b3;
+    }
+
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <h1>1st CSSE Classroom</h1>
+	    <hr>
         <p>Welcome to the student made website of 1st CSSE</p>
     </header>
+	<div class="marquee-container">
+    <div class="marquee">
+        <span class="shining-icon">New</span>
+        <a href="https://sreeraj-patnaik.github.io/sample/" class="clickable-text">please submit your physics records by monday</a>
+    </div>
+</div>
+	<h5> THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!</h5>
 
     <!-- Navigation Section -->
+	<hr><hr>
     <nav>
         <ul>
             <li><a href="#" onclick="showContent('home')">Home</a></li>
@@ -191,12 +397,14 @@
             <li><a href="#" onclick="showContent('gallery')">Gallery</a></li>
         </ul>
     </nav>
-
+<hr><hr>
     <!-- Content Sections -->
     <section id="home" class="content">
         <h2>Welcome to 1st CSSE Classroom</h2>
         <p>This website is a hub for all resources, announcements, and events for the 1st CSSE Classroom. Navigate through the tabs to learn more!</p>
-<h3> THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!</h3>
+ 
+	    
+	   
 	    <h2>Vision and Mission</h2>
 
 <h3>VISION</h3>
@@ -210,14 +418,22 @@
 <p>To promote internships to students and consultancy works among faculty by enhancing Industry-Institute Interaction.</p>
 
 	    <footer>
-            <p>Class Teacher: Prof. Dr. E. Gouthami | </p>
-		    <p>Class Representatives:</p> 
-		    <p>D. S. R. Patnaik </p>
-		    <p>D. Bharat</p> 
-		    <p>N. Srinija</p> 
-		    <p>P. K. Vedas</p>
+            <p>Class Teacher: Prof. Dr. E. Gouthami  </p>
+		    <p><b>Class Representatives:</b></p> 
+		    <hr>
+		    <p>  D. S. R. Patnaik  </p>
+		    <p>  D. Bharath        </p> 
+		    <p>  N. Srinija        </p> 
+		    <p>  P. K. Vedas       </p>
+<hr>
 		    THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!
-        </footer>
+         <p> 
+    <a href="sourcecode.txt">
+        <h3>Click here for source code</h3>
+    </a>
+</p>
+
+	    </footer>
     </section>
 
     <section id="faculty" class="content" style="display:none;">
@@ -228,7 +444,7 @@
                 <img src="prince.jpeg" alt="Prof Dr. VV Rama Reddy">
                 <h3>Prof Dr. VV Rama Reddy</h3>
                 <p>Honorary principal, Lendi Institute Of Engineering And Technology</p>
-            </div>
+		    </div>
             <div class="faculty-card">
                 <img src="harisir.jpeg" alt="Prof Dr. Haribabu Thammineni">
                 <h3>Prof Dr. Haribabu Thammineni</h3>
@@ -254,6 +470,11 @@
                 <h3>Prof Dr. E Gouthami</h3>
                 <p>Class teacher 1st CSSE, Mathematics(LAC)</p>
             </div>
+		<div class="faculty-card">
+                <img src="itw.jpg" alt="Prof. K Pushpalatha">
+                <h3>Prof. S Swaroop </h3>
+                <p> Web master, professor for IT workshop first CSSE</p>
+            </div>
             <div class="faculty-card">
                 <img src="bcm.jpg" alt="Prof. Ch Polayya">
                 <h3>Prof. Ch Polayya</h3>
@@ -261,7 +482,7 @@
             </div>
             <div class="faculty-card">
                 <img src="eph.jpg" alt="Prof. A Arjun Kumar">
-                <h3>Prof. A Arjun Kumar</h3>
+                <h3>Prof. A Arjuna Kumar</h3>
                 <p>Engineering Physics</p>
             </div>
             <div class="faculty-card">
@@ -269,83 +490,143 @@
                 <h3>Prof. K Pushpalatha</h3>
                 <p>Communicative English (Theory, Lab)</p>
             </div>
-	    <div class="faculty-card">
-                <img src="itw.jpg" alt="Prof. K Pushpalatha">
-                <h3>Prof. S Swaroop </h3>
-                <p>IT workshop</p>
-            </div>
+	    
             <div class="faculty-card">
                 <img src="ews.jpg" alt="Prof. K Pushpalatha">
                 <h3>Prof. M Balaji </h3>
                 <p>Engineering workshop</p>
             </div>
         </div>
-        <footer>
-            <p>Class Teacher: Prof. Dr. E. Gouthami | </p>
-		    <p>Class Representatives:</p> 
-		    <p>D. S. R. Patnaik </p>
-		    <p>D. Bharat</p> 
-		    <p>N. Srinija</p> 
-		    <p>P. K. Vedas</p>
+           <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami </p>
+		    <p><b>Class Representatives:</b></p> 
+		    <hr>
+		    <p> | D. S. R. Patnaik  |</p>
+		    <p> | D. Bharath        |</p> 
+		    <p> | N. Srinija        |</p> 
+		    <p> | P. K. Vedas       |</p>
+<hr>
 		    THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!
-        </footer>
+         <p> 
+    <a href="sourcecode.txt">
+        <h3>Click here for source code</h3>
+    </a>
+</p>
+
+	    </footer>
     </section>
 
     <section id="links" class="content" style="display:none;">
         <h2>Important Links</h2>
+	    <hr> <hr>
        <p>
     <a href="r23.pdf">
         <h3>Click here to access CSSE R23 syllabus</h3>
     </a>
+	       <br>
+	        <br>
+
+	      
 </p>
+	     <hr> <hr>
 	     <p> 
     <a href="https://lendi.org/index.php?option=com_content&view=article&id=7&Itemid=781">
         <h3>Click here to go to offitial college website</h3>
     </a>
+		      <br>
+		      <br>
+
+	      
 </p>
-	      <p>
+	 <hr> <hr>
+	    <p>
     <a href="https://sites.google.com/view/elcslablendi/about-us">
         <h3>Click here for ELCS lab website</h3>
     </a>
+		      <br>
+		     <br>
+
+	       
+</p>
+	     <hr> <hr>
+	      <p> 
+    <a href="sourcecode.txt">
+        <h3>Click here for source code</h3>
+    </a>
+		        <br>
+		       <br>
+</p>
+	    
+	     <hr> <hr>
+	     <p> 
+    <a href="https://docs.google.com/spreadsheets/d/1_upXreEJa3kmXdS7-om5zLgjNeIxReA4r0OO2FIDRtI/edit?gid=2122302066#gid=2122302066">
+        <h3>Click here for link to PPT PRESENTATION topic submission (ELCS LAB)</h3>
+    </a>
+		       <br>
+		      <br>
 </p>
 
-      <footer>
-            <p>Class Teacher: Prof. Dr. E. Gouthami | </p>
-		    <p>Class Representatives:</p> 
-		    <p>D. S. R. Patnaik </p>
-		    <p>D. Bharat</p> 
-		    <p>N. Srinija</p> 
-		    <p>P. K. Vedas</p>
+       <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami  </p>
+		    <p><b>Class Representatives:</b></p> 
+		    <hr>
+		    <p> | D. S. R. Patnaik  |</p>
+		    <p> | D. Bharath         |</p> 
+		    <p> | N. Srinija        |</p> 
+		    <p> | P. K. Vedas       |</p>
+<hr>
 		    THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!
-        </footer>
+         <p> 
+    <a href="sourcecode.txt">
+        <h3>Click here for source code</h3>
+    </a>
+</p>
+
+	    </footer>
     </section>
 
     <section id="announcements" class="content" style="display:none;">
         <h2>Announcements</h2>
         <p>Stay tuned for the latest announcements and updates related to the 1st CSSE classroom.</p>
-       <footer>
-            <p>Class Teacher: Prof. Dr. E. Gouthami | </p>
-		    <p>Class Representatives:</p> 
-		    <p>D. S. R. Patnaik </p>
-		    <p>D. Bharat</p> 
-		    <p>N. Srinija</p> 
-		    <p>P. K. Vedas</p>
+   <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami  </p>
+		    <p><b>Class Representatives:</b></p> 
+		    <hr>
+		    <p> | D. S. R. Patnaik  |</p>
+		    <p> | D. Bharath         |</p> 
+		    <p> | N. Srinija        |</p> 
+		    <p> | P. K. Vedas       |</p>
+<hr>
 		    THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!
-        </footer>
+         <p> 
+    <a href="sourcecode.txt">
+        <h3>Click here for source code</h3>
+    </a>
+</p>
+
+	    </footer>
     </section>
 
     <section id="gallery" class="content" style="display:none;">
         <h2>Gallery</h2>
         <p>Gallery of events, classes, and activities related to 1st CSSE.</p>
-        <footer>
-            <p>Class Teacher: Prof. Dr. E. Gouthami | </p>
-		    <p>Class Representatives:</p> 
-		    <p>D. S. R. Patnaik </p>
-		    <p>D. Bharat</p> 
-		    <p>N. Srinija</p> 
-		    <p>P. K. Vedas</p>
+          <footer>
+            <p>Class Teacher: Prof. Dr. E. Gouthami  </p>
+		    <p><b>Class Representatives:</b></p> 
+		    <hr>
+		    <p> | D. S. R. Patnaik  |</p>
+		    <p> | D. Bharath         |</p> 
+		    <p> | N. Srinija        |</p> 
+		    <p> | P. K. Vedas       |</p>
+<hr>
 		    THIS IS NOT THE OFFITIAL WEBSITE. IT IS STUDENT-MADE AND THE INFORMATION PROVIDED IS TO BE RECHECKED OFFITIALLY !!!
-        </footer>
+         <p> 
+    <a href="sourcecode.txt">
+        <h3>Click here for source code</h3>
+    </a>
+</p>
+
+	    </footer>
     </section>
 
     <script>
