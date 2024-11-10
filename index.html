@@ -5,66 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1st CSSE Classroom</title>
     <style>
-       /* Base Styling */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+      /* Base Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; change the styling professional 
+            font-family: 'Arial', sans-serif;
+        }
 
-/* Colors */
-:root {
-    --primary-color: #2b6a94; /* Dark blue */
-    --secondary-color: #f0f4f8; /* Soft light grey */
-    --accent-color: #e9eff3; /* Light blue */
-    --text-color: #2b2b2b; /* Dark grey for readability */
-    --light-text: #555555; /* Light grey for subtext */
-    --background-color: #ffffff; /* White background */
-    --card-background: #ffffff; /* White card background */
-    --footer-background: #3b3f42; /* Dark grey footer background */
-}
+        /* Colors */
+        :root {
+            --primary-color: #3a7ca5;
+            --secondary-color: #f3f4f6;
+            --accent-color: #e1e8ed;
+            --text-color: #333;
+            --light-text: #555;
+            --background-color: #fefefe;
+            --card-background: #ffffff;
+            --footer-background: #D3D3D3; /* Updated footer background */
+        }
 
-/* Layout Styling */
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
+        /* Layout Styling */
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-/* Header Styling */
-header {
-    background-image: url('CLG.jpeg'); /* Use absolute path or URL */
-    background-size: cover;
-    background-position: center;
-    color: var(--secondary-color);
-    padding: 2rem;
+        /* Header Styling */
+        header {
+    background-image: url('CLG.jpeg'); /* Absolute path to your image */
+    background-size: cover; /* Cover the entire header */
+    background-position: center; /* Center the background image */
+    color: #00008B;
+    padding: 1.5rem;
     text-align: center;
 }
 
-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.3rem;
-}
 
-header p {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-}
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
 
-/* Navigation Styling */
-nav ul {
-    display: flex;
-    justify-content: center;
-    background-color: var(--accent-color);
-    padding: 1rem;
-    list-style: none;
-}
+        header p {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
 
+        /* Navigation Styling */
+        nav ul {
+            display: flex;
+            justify-content: center;
+            background-color: var(--accent-color);
+            padding: 1rem;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Content Section Styling */
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+
+        /* Faculty Card Styling */
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .faculty-card {
+            background-color: var(--card-background);
+            border: none;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            margin: 1rem;
+            text-align: center;
+            width: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .faculty-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 2px solid var(--primary-color);
+        }
+
+        .faculty-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+        }
+
+        .faculty-card p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: var(--footer-background);
+            color: #fefefe;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
 nav ul li {
     margin: 0 1rem;
 }
